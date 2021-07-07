@@ -1,7 +1,6 @@
 class RoomsController < ApplicationController
 
   def open_room
-    @belong_to_common_room = nil 
     @user = User.find_by(id: params[:user_id])
     if(@user == current_user) then
       respond_to do |format|
@@ -9,8 +8,15 @@ class RoomsController < ApplicationController
       end 
       return
     end
-    @user_rooms = @user.rooms
+    @user_rooms = @user.rooms 
     @current_user_rooms = current_user.rooms
+    if @user_rooms.empty?
+      @room = Room.create()
+        @room.users << @user 
+        @room.users << current_user
+        redirect_to room_path(@room)
+        return 
+    end 
     @user_rooms.each do |room| 
       if @current_user_rooms.include?(room)
         redirect_to room_path(room)
@@ -24,7 +30,7 @@ class RoomsController < ApplicationController
   end 
 
   def show
-    @room = Room.find_by(id: params[:room_id])
+    @room = Room.find_by(id: params[:id])
   end
 
   def index
