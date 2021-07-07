@@ -1,1 +1,6 @@
-<h1><%= @room.id %></h1>
+<div class="continer">
+  <div class="participators-div">
+    <h3 class="text-center">participators</h3>
+    <%= render partial: "participator", collection: @participators %>
+  </div>
+</div>
