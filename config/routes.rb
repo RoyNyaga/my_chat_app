@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   get "/open_room/:user_id", to: "rooms#open_room", as: "open_room"
   resources :rooms
   get 'rooms/index'
