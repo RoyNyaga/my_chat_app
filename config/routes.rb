@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  get 'rooms/show'
+  get "/open_room/:user_id", to: "rooms#open_room", as: "open_room"
+  resources :rooms
   get 'rooms/index'
   root "users#index"
   devise_for :users
