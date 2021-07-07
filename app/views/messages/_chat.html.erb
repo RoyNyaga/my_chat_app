@@ -1,0 +1,13 @@
+<div class="chat-section-body border p-1">
+  <div class="messages-div">
+    <p>messages</p>
+  </div>
+
+  <div class="create-message-form">
+    <%= form_with model: Message.new do |form| %>
+      <%= form.text_area :title, placeholder: "enter your message", 
+      class: "form-control" %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+</div>

@@ -3,4 +3,10 @@
     <h3 class="text-center">participators</h3>
     <%= render partial: "participator", collection: @participators %>
   </div>
+
+  <div class="chat-section row">
+    <div class="col-md-5 mx-auto">
+      <%= render "messages/chat" %>
+    </div>
+  </div>
 </div>
