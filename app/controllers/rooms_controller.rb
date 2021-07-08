@@ -32,6 +32,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find_by(id: params[:id])
     @participators = @room.users
+    @messages = @room.messages
   end
 
   def index

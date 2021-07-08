@@ -1,13 +1,15 @@
 <div class="chat-section-body border p-1">
   <div class="messages-div">
-    <p>messages</p>
+    <%= render partial: "messages/message", collection: @messages %>
   </div>
 
   <div class="create-message-form">
-    <%= form_with model: Message.new do |form| %>
-      <%= form.text_area :title, placeholder: "enter your message", 
+    <%= form_with model: Message.new, local: false do |form| %>
+      <%= form.text_area :context, placeholder: "enter your message", 
       class: "form-control" %>
-      <%= form.submit %>
+      <%= form.hidden_field :user_id, value: current_user.id %>
+      <%= form.hidden_field :room_id, value: @room.id %>
+      <%= form.submit id: "message-create-btn" %>
     <% end %>
   </div>
 </div>

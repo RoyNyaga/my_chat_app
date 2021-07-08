@@ -1,8 +1,8 @@
-<div class="message my-2">
-  <div style="width: 20%;" class="user">
-    <%= message.user.name %>
+<div class="message my-3">
+  <div style="width: 15%; background: white;" class="user d-inline-block">
+    <%= message.user.email[0..4] %>
   </div>
-  <div style="width: 80%;" class="message-content">
-    <%= message.content %>
+  <div style="width: 80%;" class="message-content d-inline-block">
+    <%= message.context %>
   </div>
 </div>

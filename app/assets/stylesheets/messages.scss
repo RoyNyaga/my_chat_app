@@ -4,7 +4,6 @@
 
 .chat-section-body{
   height: 80vh;
-  background: yellow;
   position: relative;
 }
 
@@ -16,6 +15,10 @@
 
 .messages-div{
   height: 78%;
-  background: red;
   overflow-y: scroll;
+}
+
+.message{
+  background: rgb(160, 186, 233);
+  padding: 10px;
 }
