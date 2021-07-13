@@ -1,5 +1,5 @@
 <div class="chat-section-body border p-1">
-  <div class="messages-div">
+  <div class="messages-div" id="messages-of-room-<%= @room.id %>">
     <%= render partial: "messages/message", collection: @messages %>
   </div>
 

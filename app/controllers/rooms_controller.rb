@@ -1,5 +1,4 @@
 class RoomsController < ApplicationController
-
   def open_room
     @user = User.find_by(id: params[:user_id])
     if(@user == current_user) then
@@ -32,7 +31,7 @@ class RoomsController < ApplicationController
   def show
     @room = Room.find_by(id: params[:id])
     @participators = @room.users
-    @messages = @room.messages
+    @messages = @room.messages 
   end
 
   def index
